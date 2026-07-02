@@ -1,16 +1,119 @@
-<HTML>
-<HEAD>
-    <title>.: Liên hệ :.</title>
-</HEAD>
-<BODY>
-    <center>
-        <h3>THÔNG TIN LIÊN HỆ</h3>
-        <i>Mọi chi tiết xin vui lòng liên hệ</i>
-        <hr width="300" />
-        Nguyễn Minh Trí<br />
-        Trường Cao Đẳng Công Nghệ Cao Đồng Nai<br />
-        Điện thoại: 0902 604 456<br />
-        Email: tantai22066@gmail.com
-    </center>
-</BODY>
-</HTML>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Trang Web Bài Tập</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial;
+}
+body{
+    background:#f2f2f2;
+}
+.container{
+    width:95%;
+    margin:auto;
+    border:2px solid #0b5ed7;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+/* Header */
+.header{
+    height:150px;
+    background:url('banner.jpg') center/cover;
+    color:white;
+    padding:30px;
+}
+.header h1{
+    font-size:40px;
+}
+.header p{
+    font-size:20px;
+    color:#ffcccc;
+}
+
+/* Main */
+.main{
+    display:flex;
+    height:600px;
+}
+
+/* Sidebar trái */
+.left{
+    width:250px;
+    background:white;
+    border-right:1px solid #ccc;
+    padding:20px;
+}
+.left ul{
+    list-style:none;
+}
+.left li{
+    padding:10px 0;
+}
+
+/* Content */
+.content{
+    flex:1;
+    background:#ddd;
+    padding:20px;
+}
+
+/* Sidebar phải */
+.right{
+    width:250px;
+    background:white;
+    border-left:1px solid #ccc;
+    padding:20px;
+}
+.user{
+    padding:10px;
+    border-bottom:1px solid #ccc;
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    padding:10px;
+    background:white;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>MAI TUẤN ANH (Danbii)</h1>
+        <p>Đừng lo lắng về ngày mai...</p>
+    </div>
+
+    <div class="main">
+        <div class="left">
+            <h3>TRANG CHỦ</h3>
+            <ul>
+                <li>Bài 1</li>
+                <li>Bài 2</li>
+                <li>Bài 3</li>
+                <li>Bài 4</li>
+                <li>Bài 5</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>TRANG WEB ĐẦU TIÊN</h2>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 - Website by Danbii
+    </div>
+
+</div>
+
+</body>
+</html>
