@@ -3,69 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Website Bài Tập HTML</title>
+
     <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
         body{
-            font-family: Arial;
-            background:#f4f4f4;
-            text-align:center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,#74ebd5,#ACB6E5);
+            min-height:100vh;
         }
 
         h1{
-            color:#333;
+            text-align:center;
+            color:white;
+            padding:30px;
+            font-size:40px;
+            text-shadow:2px 2px 5px gray;
         }
 
         .menu{
-            width:500px;
+            width:600px;
             margin:auto;
         }
 
         .box{
             background:white;
-            margin:15px;
-            padding:20px;
-            border-radius:10px;
-            box-shadow:0 0 8px gray;
+            margin:20px 0;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        .box h2{
+            margin-bottom:15px;
+            color:#333;
         }
 
         a{
+            display:inline-block;
             text-decoration:none;
-            color:white;
             background:#007bff;
-            padding:10px 20px;
-            border-radius:5px;
+            color:white;
+            padding:12px 30px;
+            border-radius:8px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        a:hover{
+            background:#0056b3;
+            transform:scale(1.05);
         }
     </style>
 </head>
 <body>
 
-<h1>TRANG WEB BÀI TẬP CỦA LÊ BÙI TẤN TÀI</h1>
+    <h1>TRANG WEB BÀI TẬP CỦA LÊ BÙI TẤN TÀI</h1>
 
-<div class="menu">
-    <div class="box">
-        <h2>Bai1</h2>
-        <a href="Bai1 Cấu Trúc Trang Wed/index.html">Xem bài</a>
-    </div>
+    <div class="menu">
 
-    <div class="box">
-        <h2>Bai2</h2>
-        <a href="Bài1.2 -Excite/index.html">Xem bài</a>
-    </div>
+        <div class="box">
+            <h2>Bài 1</h2>
+            <a href="bai1/index.html">Xem bài</a>
+        </div>
 
-    <div class="box">
-        <h2>Bai3</h2>
-        <a href="Bai3 - Thiết kế trang web Free.com/index.html">Xem bài</a>
-    </div>
+        <div class="box">
+            <h2>Bài 2</h2>
+            <a href="bai2/index.html">Xem bài</a>
+        </div>
 
-    <div class="box">
-        <h2>Bai4</h2>
-        <a href="Bai4 Thiết kế trang web SCAAL/index.html">Xem bài</a>
-    </div>
+        <div class="box">
+            <h2>Bài 3</h2>
+            <a href="bai3/index.html">Xem bài</a>
+        </div>
 
-    <div class="box">
-        <h2>Bai5</h2>
-        <a href="Bai5 – Thiết kế trang Phiếu đăng ký/phieudangky.html">Xem bài</a>
+        <div class="box">
+            <h2>Bài 4</h2>
+            <a href="bai4/index.html">Xem bài</a>
+        </div>
+
+        <div class="box">
+            <h2>Bài 5</h2>
+            <a href="bai5/phieudangky.html">Xem bài</a>
+        </div>
+
     </div>
-</div>
 
 </body>
 </html>
