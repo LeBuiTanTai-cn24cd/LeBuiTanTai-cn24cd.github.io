@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Bạ Website</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* Nhúng ảnh nền hoa_gio_hoa.jpg từ thư mục Images theo cấu trúc dự án */
+            background-image: url('file:///D|/LeBuiTanTai-CN24CD/BaiTapHTML/Images/hoa_gio_hoa.jpg');
+            background-size: cover;
+            background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn trang */
+            margin: 0;
+            padding: 40px 15px;
+            line-height: 1.6;
+        }
+
+        /* Khung hộp màu trắng mờ giúp bảo bọc chữ dễ đọc, không bị lem vào ảnh nền */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.92); /* Độ mờ trắng 92% */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Định dạng tiêu đề chính */
+        h2 {
+            color: blue;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Định dạng các tiêu đề mục con */
+        h3 {
+            color: #333333;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        /* Định dạng danh sách không thứ tự (ul) */
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Định dạng các đường link văn bản */
+        a {
+            color: #0066cc;
+            text-decoration: none; /* Bỏ gạch chân mặc định */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Hiện gạch chân khi di chuột vào */
+            color: #ff0000;
+        }
+
+        /* Định dạng khu vực chứa ảnh quảng cáo */
+        .ads-section {
+            margin-top: 25px;
+            text-align: center; /* Căn giữa các ảnh quảng cáo */
+        }
+
+        /* Định dạng cho thẻ ảnh nằm bên trong thẻ liên kết */
+        .ads-section a img {
+            width: 150px;       /* Kích thước chiều ngang ảnh đúng 150px */
+            height: auto;
+            border: 1px solid #cccccc; /* Viền mỏng bao quanh ảnh */
+            margin: 5px;        /* Khoảng cách giữa các tấm ảnh */
+            transition: transform 0.2s; /* Hiệu ứng mượt mà */
+        }
+
+        /* Hiệu ứng tương tác nhẹ khi rê chuột vào hình quảng cáo */
+        .ads-section a img:hover {
+            transform: scale(1.05); /* Phóng to nhẹ ảnh lên 5% để tạo hiệu ứng nút bấm */
+            border-color: #ff0000;
+        }
+
+        /* Định dạng khu vực chân trang (Liên hệ email) */
+        .footer-email {
+            margin-top: 35px;
+            border-top: 1px dashed #bbbbbb; /* Đường gạch đứt ngăn cách */
+            padding-top: 15px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    
+        <h2>DANH BẠ WEBSITE</h2>
+        
+        <h3>Tin Tức</h3>
+        <ul>
+            <li><a href="https://vnexpress.net" target="_blank">Tin tức Việt Nam (VnExpress)</a></li>
+            <li><a href="https://tuoitre.vn" target="_blank">Báo Tuổi Trẻ</a></li>
+        </ul>
+        
+        <h3>Giải trí</h3>
+        <ul>
+            <li><a href="https://nhacso.net" target="_blank">Nhạc số Online</a></li>
+            <li><a href="https://ngoisao.vn" target="_blank">Giới thiệu ngôi sao</a></li>
+        </ul>
+        
+        <h3>Liên kết quảng cáo</h3>
+        <div class="ads-section">
+            <a href="https://echip.com.vn" target="_blank">
+                <img src="../photo-2-1628393523096309066009.jpg" alt="Báo Echip">
+            </a>
+            <a href="https://vietnamnet.vn" target="_blank">
+                <img src="../redbull.jpg" alt="Báo Vietnamnet">
+            </a>
+        </div>
+        
+        <div class="footer-email">
+          <p>Mọi ý kiến đóng góp xin liên hệ: <a href="mailto:hpt7777@gmail.com">Gửi Mail về ban quản trị</a></p>
+        </div>
+        
+    </div>
+
+</body>
+</html>

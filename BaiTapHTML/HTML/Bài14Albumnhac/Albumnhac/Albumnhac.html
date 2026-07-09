@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Album Nhạc</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc; /* Nền xám xanh nhạt nhẹ nhàng */
+            margin: 0;
+            padding: 40px 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Khung hộp bọc toàn bộ Album nhạc */
+        .album-box {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng mờ tạo chiều sâu */
+        }
+
+        /* Định dạng hiệu ứng chữ chạy Marquee */
+        marquee {
+            background-color: #ffe3e3; /* Đổ màu nền nhẹ cho thanh chữ chạy */
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        marquee h1 {
+            color: #d90429; /* Màu đỏ nổi bật */
+            margin: 0;
+            font-size: 24px;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+
+        /* Định dạng danh sách các liên kết bài hát */
+        .playlist {
+            list-style-type: none; /* Xóa bỏ dấu chấm tròn mặc định */
+            padding: 0;
+            margin: 0;
+        }
+
+        .playlist li {
+            border-bottom: 1px dashed #e0e0e0; /* Đường gạch đứt trang nhã giữa các bài */
+            padding: 12px 10px;
+            transition: background-color 0.2s;
+        }
+
+        /* Hiệu ứng đổi màu nền nhẹ khi rê chuột vào dòng bài hát */
+        .playlist li:hover {
+            background-color: #fdfdfd;
+        }
+
+        /* Định dạng thẻ liên kết a trỏ tới file nhạc */
+        .playlist a {
+            color: #0056b3; /* Màu xanh dương */
+            text-decoration: none; /* Xóa gạch chân mặc định */
+            font-weight: bold;
+            font-size: 16px;
+            display: block; /* Biến toàn bộ vùng dòng thành nút bấm */
+        }
+
+        /* Hiệu ứng khi di chuột vào chữ liên kết */
+        .playlist a:hover {
+            color: #ff0000; /* Đổi sang chữ màu đỏ */
+            text-decoration: underline; /* Hiện gạch chân */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="album-box">
+    
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            <h1>Nhạc Online</h1>
+        </marquee>
+        
+        <ul class="playlist">
+            <li>
+                <a href="file:///D|/LeBuiTanTai-CN24CD/BaiTapHTML/Sounds/Di_de_tro_ve.mp3" target="_blank">1. Đi để trở về</a>
+            </li>
+            <li>
+                <a href="file:///D|/LeBuiTanTai-CN24CD/BaiTapHTML/Sounds/Dang_moi.mp3" target="_blank">2. Đắng Môi</a>
+            </li>
+        </ul>
+        
+    </div>
+
+</body>
+</html>

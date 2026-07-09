@@ -1,0 +1,68 @@
+/* Thiết lập font chữ và căn giữa trang */
+body {
+    font-family: "Times New Roman", Times, serif, Arial;
+    background-color: #f7f9fa; /* Màu nền xám nhạt nhẹ nhàng bên ngoài */
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    margin: 0;
+}
+
+/* Khung giấy hiển thị bài thơ ở giữa */
+.poetry-container {
+    width: 500px;
+    background-color: #ffffff; /* Khung nền trắng cho bài thơ nổi bật */
+    padding: 30px 40px;
+    border: 1px solid #dddddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Căn giữa toàn bộ chữ tiêu đề */
+}
+
+/* Tiêu đề bài thơ chính */
+.poetry-title {
+    color: #b30000; /* Màu đỏ đô sang trọng cổ điển */
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+/* Tên tác giả */
+.poetry-author {
+    font-style: italic;
+    color: #555555;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+/* Đường gạch ngang kẻ mờ phân cách */
+.divider-line {
+    border: none;
+    height: 1px;
+    background-color: #cc0000;
+    width: 60%;
+    margin: 15px auto;
+}
+
+/* Khu vực hiển thị văn bản thơ */
+.poetry-content {
+    text-align: left; /* Đổi về căn lề bên trái để các câu thơ thẳng hàng đầu câu */
+    width: fit-content;
+    margin: 25px auto; /* Đẩy khối thơ ra chính giữa khung giấy */
+    font-size: 17px;
+    line-height: 1.6;
+    color: #111111;
+}
+
+/* Khoảng cách giữa các khổ thơ */
+.stanza {
+    margin-bottom: 20px;
+}
+
+/* Chân trang */
+.poetry-footer {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 20px;
+}
+

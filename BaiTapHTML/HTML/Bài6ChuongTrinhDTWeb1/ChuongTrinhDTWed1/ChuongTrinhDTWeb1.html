@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Danh Sách Không Đánh Thứ Tự - Thêm CSS</title>
+    
+    <style>
+        /* Định dạng cho toàn bộ trang web */
+        body {
+            font-family: Arial, sans-serif; /* Thay đổi font chữ dễ nhìn hơn */
+            background-color: #f9f9f9;      /* Màu nền xám nhạt nhẹ nhàng */
+            line-height: 1.6;               /* Khoảng cách giữa các dòng */
+            padding: 20px;
+        }
+
+        /* Định dạng cho khung chứa nội dung bài học */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;                 /* Căn giữa toàn bộ khối ra giữa màn hình */
+            background-color: #ffffff;      /* Nền trắng cho khung nội dung */
+            padding: 30px;
+            border-radius: 8px;             /* Bo tròn góc khung */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Tạo hiệu ứng đổ bóng nhẹ */
+        }
+
+        /* Định dạng tiêu đề */
+        h3 {
+            color: #d9534f;                 /* Màu đỏ đậm hiện đại hơn thay cho màu đỏ tươi nguyên bản */
+            text-align: center;
+            text-transform: uppercase;      /* Tự động viết hoa tiêu đề */
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        /* Định dạng cho danh sách ul */
+        ul {
+            color: #0275d8;                 /* Màu xanh dương dịu mắt hơn */
+            list-style-type: square;        /* Thay đổi dấu chấm tròn thành dấu ô vuông */
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Định dạng cho từng dòng trong danh sách */
+        li {
+            margin-bottom: 10px;            /* Tạo khoảng cách giữa các dòng văn bản */
+            font-size: 16px;
+        }
+
+        /* Định dạng cho phần thông tin liên hệ */
+        .contact-info {
+            color: #d9534f;
+            border-top: 1px dashed #cccccc; /* Thêm đường gạch đứt ngăn cách ở phía trên */
+            padding-top: 15px;
+            font-size: 14px;
+        }
+        
+        .contact-info em {
+	color: #CC00FF;                 /* Đổi màu phần chữ in nghiêng sang màu tối để dễ đọc hơn */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    
+        <h3>Chương trình đào tạo thiết kế web</h3>
+        
+        <ul>
+            <li>Ngôn ngữ HTML & FrontPage.</li>
+            <li>Xử lý ảnh & Thiết kế giao diện PhotoShopCS.</li>
+            <li>DreamWeaver MX.</li>
+            <li>Khai thác và Quản trị Domain, Hostting.</li>
+            <li>Ngôn ngữ kịch bản JavaScript.</li>
+        </ul>
+        
+        <p class="contact-info">
+            Mọi thông tin chi tiết xin liên hệ: 
+            <em>Văn phòng giáo vụ. Tel:08.8564258, Giaovu@netnam.vn</em>
+        </p>
+        
+    </div>
+
+</body>
+</html>
