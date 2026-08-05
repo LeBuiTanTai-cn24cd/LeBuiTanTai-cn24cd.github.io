@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tham Gia CLB - Sứa Biển</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm() {
+            var hoten = document.forms["registerForm"]["txtHoten"].value;
+            var email = document.forms["registerForm"]["txtEmail"].value;
+            var dt = document.forms["registerForm"]["txtDienthoai"].value;
+            var ngay = parseInt(document.forms["registerForm"]["ngay"].value);
+            var thang = parseInt(document.forms["registerForm"]["thang"].value);
+            var nam = parseInt(document.forms["registerForm"]["nam"].value);
+
+            // Kiểm tra họ tên 
+            if (hoten == "" || hoten.length > 40) {
+                alert("Họ và tên không được để trống và tối đa 40 ký tự!");
+                return false;
+            }
+            // Kiểm tra định dạng email 
+            var emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailReg.test(email)) {
+                alert("Email không đúng định dạng!");
+                return false;
+            }
+            // Kiểm tra điện thoại 
+            if (dt == "" || dt.length > 10 || isNaN(dt)) {
+                alert("Điện thoại phải là số và tối đa 10 ký tự!");
+                return false;
+            }
+            // Kiểm tra tính hợp lệ ngày sinh 
+            if (isNaN(ngay) || ngay < 1 || ngay > 31) {
+                alert("Ngày sinh phải nhỏ hơn 32!");
+                return false;
+            }
+            if (isNaN(thang) || thang < 1 || thang > 12) {
+                alert("Tháng sinh phải nhỏ hơn 13!");
+                return false;
+            }
+            if (isNaN(nam) || nam >= 2006) {
+                alert("Năm sinh phải nhỏ hơn 2006!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <aside class="left-sidebar">
+            <img src="IMAGES/sanho.gif" width="253" height="471" alt=""/>
+            <div class="color-bar"></div>
+        </aside>
+
+        <main class="main-container">
+            <nav class="navbar">
+                <a href="#">Trang chủ</a> <span>|</span>
+                <a href="gioithieu.html">Giới thiệu</a> <span>|</span>
+                <a href="#">Thư viện</a> <span>|</span>
+                <a href="#">Nghiên cứu</a> <span>|</span>
+                <a href="thamgia.html">Tham gia</a>
+            </nav>
+
+            <div class="content-area">
+                <section class="page-content">
+                    <h1 style="color: #f15a24; font-size: 36px;">THAM GIA CLB</h1>
+                    <p style="color:#000099; margin-bottom:15px;">Quý độc giả hãy điền đầy đủ thông tin để tham gia phát triển Câu lạc Bộ ngày càng vững mạnh hơn </p>
+                    
+                    <div class="form-box">
+                        <form name="registerForm" action="mailto:nguyenminhtri1986@gmail.com" method="post" enctype="text/plain" onsubmit="return validateForm()">
+                            <table class="form-table">
+                                <tr>
+                                    <td class="label-cell">Họ và tên :</td>
+                                    <td><input type="text" name="txtHoten" style="width:80%;"> <span style="color:red;">(*)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Địa chỉ :</td>
+                                    <td><input type="text" name="txtDiachi" style="width:95%;"></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Email :</td>
+                                    <td><input type="text" name="txtEmail" style="width:80%;"> <span style="color:red;">(*)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Điện thoại :</td>
+                                    <td><input type="text" name="txtDienthoai" style="width:50%;"></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Ngày sinh :</td>
+                                    <td>
+                                        <input type="text" name="ngay" style="width:35px; text-align:center;"> /
+                                        <input type="text" name="thang" style="width:35px; text-align:center;"> /
+                                        <input type="text" name="nam" style="width:50px; text-align:center;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Đề tài :</td>
+                                    <td>
+                                        <select name="slDetai">
+                                            <option value="suabien">Tìm hiểu Sứa Biển</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Nhóm :</td>
+                                    <td>
+                                        <input type="radio" name="rdNhom" value="Nghiên cứu" checked> Nghiên cứu<br>
+                                        <input type="radio" name="rdNhom" value="Hải Ngư"> Hải Ngư<br>
+                                        <input type="radio" name="rdNhom" value="Viễn Dương"> Viễn Dương<br>
+                                        <input type="radio" name="rdNhom" value="Mỹ thuật"> Mỹ thuật<br>
+                                        <input type="radio" name="rdNhom" value="Thực phẩm"> Thực phẩm<br>
+                                        <input type="radio" name="rdNhom" value="Sinh viên"> Sinh viên
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Gửi hình :</td>
+                                    <td><input type="file" name="fileHinh"></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Tài liệu :</td>
+                                    <td>
+                                        <input type="checkbox" name="ck1" value="Sinh vật Biển"> Sinh vật Biển<br>
+                                        <input type="checkbox" name="ck2" value="Các loại Sứa Biển"> Các loại Sứa Biển<br>
+                                        <input type="checkbox" name="ck3" value="San Hô"> San Hô<br>
+                                        <input type="checkbox" name="ck4" value="Môi trường Biển"> Môi trường Biển<br>
+                                        <input type="checkbox" name="ck5" value="Khí hậu"> Khí hậu
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align:center; padding-top:15px;">
+                                        <input type="submit" value="Tham gia" style="padding:4px 15px; margin-right:10px;">
+                                        <input type="reset" value="Xóa thông tin" style="padding:4px 15px;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </section>
+
+                <aside class="right-gallery">
+                    <div class="img-box"><img src="IMAGES/nhom1b.jpg" width="152" height="122" alt=""/></div>
+                    <div class="img-box"><img src="IMAGES/nhom1a.jpg" width="152" height="122" alt=""/></div>
+                    <div class="img-box"><img src="IMAGES/nhom1c.jpg" width="152" height="122" alt=""/></div>
+                    <div class="img-box"><img src="IMAGES/nhom1d.jpg" width="152" height="122" alt=""/></div>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

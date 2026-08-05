@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+}
+
+/* Khung chính rộng 1000px cố định */
+.wrapper {
+    width: 1000px;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Cột banner bên trái */
+.left-sidebar {
+    width: 250px;
+    background-color: #000;
+    display: flex;
+}
+.left-sidebar .banner-img {
+    width: 210px;
+    height: 100%;
+    object-fit: cover;
+}
+.left-sidebar .color-bar {
+    width: 40px;
+    background: linear-gradient(to bottom, #00a859, #8dc63f, #fff200, #ec008c, #00aeef, #0054a6);
+}
+
+/* Khung bên phải */
+.main-container {
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Thực đơn / Menu đúng yêu cầu đề bài */
+.navbar {
+    background-color: #f15a24;
+    padding: 10px 20px;
+}
+.navbar a {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    color: #000099;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.navbar a:hover {
+    color: #0000FF;
+    text-decoration: underline;
+}
+.navbar span {
+    color: #ffffff;
+}
+
+/* Vùng chứa nội dung */
+.content-area {
+    display: flex;
+    flex: 1;
+    background: url('../bg_jellyfish.jpg') no-repeat center center; /* Ảnh nền sứa mờ nét mảnh */
+    background-size: contain;
+    padding: 20px;
+}
+
+/* Khung nội dung biến đổi (Editable Region) */
+.page-content {
+    width: 540px;
+    padding-right: 15px;
+}
+
+/* Cột 4 ảnh nhỏ cố định bên phải */
+.right-gallery {
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.img-box {
+    background: white;
+    padding: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+}
+.img-box img {
+    width: 100%;
+    display: block;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Định dạng Form trang tham gia */
+.form-box {
+    background-color: #a3e4ad;
+    border: 1px solid #81c784;
+    padding: 15px;
+    width: 100%;
+}
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.form-table td {
+    padding: 6px 4px;
+    vertical-align: top;
+}
+.label-cell {
+    width: 90px;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 10px !important;
+}
