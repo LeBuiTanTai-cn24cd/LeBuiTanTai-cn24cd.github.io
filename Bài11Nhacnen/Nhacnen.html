@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Journey through the Decade</title>
+<style>
+    /* Hiệu ứng tạo hình tròn và xoay cho đĩa nhạc */
+    .music-disc {
+        border-radius: 50%; /* Cắt ảnh thành hình tròn hoàn hảo */
+        border: 6px solid #333; /* Tạo viền đen giống rìa đĩa nhạc */
+        box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Tạo bóng đổ nhẹ xung quanh */
+        
+        /* Cấu hình chuyển động xoay liên tục */
+        animation: spin 12s linear infinite; /* Xoay đều, 12 giây hết 1 vòng, xoay vô tận */
+    }
+
+    /* Định nghĩa vòng xoay từ 0 đến 360 độ */
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+</style>
+</head>
+
+<body bgcolor="#E6F3FF">
+
+<center>
+    <h1>JOURNEY THROUGH THE DECADE</h1>
+    <h2>Kamen Rider Decade OST</h2>
+    
+    <!-- Bạn có thể thay "septung.jpg" bằng một ảnh khác phù hợp với bài hát mới nếu muốn nhé -->
+    <img src="img.jfif" width="400" height="400" class="music-disc" alt="Journey through the Decade">
+
+    <br><br>
+
+    <audio controls autoplay loop>
+        <source src="Journey through the Decade.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+</center>
+
+</body>
+</html>
