@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Album Nhạc</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .album-box {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+
+        marquee {
+            background-color: #ffe3e3;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        marquee h1 {
+            color: #d90429;
+            margin: 0;
+            font-size: 24px;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .playlist {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .playlist li {
+            border-bottom: 1px dashed #e0e0e0;
+            padding: 12px 10px;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+
+        .playlist li:hover {
+            background-color: #f0f4f8;
+        }
+
+        .playlist .song-item {
+            color: #0056b3;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .playlist li:hover .song-item {
+            color: #ff0000;
+        }
+
+        .album-disc {
+            border-radius: 50%;
+            border: 3px solid #333;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .player-section {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none; /* Ẩn trình phát cho đến khi chọn bài */
+        }
+
+        .player-section h2 {
+            font-size: 20px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* HIỆU ỨNG XOAY ĐĨA LỚN */
+        .main-disc {
+            border-radius: 50%;
+            border: 6px solid #333;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            object-fit: cover;
+            /* Thiết lập animation xoay tròn liên tục trong 12 giây */
+            animation: spinLarge 12s linear infinite;
+            animation-play-state: paused; /* Mặc định đứng im */
+        }
+
+        /* Khi thêm class .playing, đĩa sẽ bắt đầu xoay */
+        .main-disc.playing {
+            animation-play-state: running;
+        }
+
+        @keyframes spinLarge {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        audio {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="album-box">
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            <h1 id="top-title">Kamen Rider Music</h1>
+        </marquee>
+        
+        <ul class="playlist">
+    <!-- Bài 1: 555 (Dùng ảnh faiz.jpg và nhạc 555.mp3) -->
+    <li onclick="changeSong('Kamen Rider 555 - Justi\'s', 'faiz.jpg', '555.mp3')">
+        <div class="song-item">
+            <img src="faiz.jpg" width="100" height="100" class="album-disc" alt="Faiz"/>
+            1. Kamen Rider 555 - Justi's
+        </div>
+    </li>
+    
+    <!-- Bài 2: Agito (Dùng ảnh agito.jpg và nhạc agito.mp3) -->
+    <li onclick="changeSong('Kamen Rider Agito - Believe Yourself', 'agito.jpg', 'agito.mp3')">
+        <div class="song-item">
+            <img src="agito.jpg" width="100" height="100" class="album-disc" alt="Agito"/>
+            2. Kamen Rider Agito
+        </div>
+    </li>
+
+    <!-- Bài 3: Kiva (Dùng ảnh kiva.jpg và nhạc kiva.mp3) -->
+    <li onclick="changeSong('Kamen Rider Kiva - Supernova', 'kiva.jpg', 'kiva.mp3')">
+        <div class="song-item">
+            <img src="kiva.jpg" width="100" height="100" class="album-disc" alt="Kiva"/>
+            3. Kamen Rider Kiva - Supernova
+        </div>
+    </li>
+</ul>
+    </div>
+
+    <div class="player-section" id="player-box">
+        <h2 id="current-title">Đang phát: Chưa chọn bài</h2>
+        
+        <!-- Ảnh đĩa lớn xoay tròn -->
+        <img id="big-disc" src="HD-wallpaper-kamen-rider-kamen-rider-tokusatsu.jpg" width="280" height="280" class="main-disc" alt="Đĩa nhạc lớn">
+        
+        <br>
+        <audio id="audio-control" controls preload="auto"></audio>
+    </div>
+
+    <script>
+        const playerBox = document.getElementById('player-box');
+        const currentTitle = document.getElementById('current-title');
+        const bigDisc = document.getElementById('big-disc');
+        const audioControl = document.getElementById('audio-control');
+        const topTitle = document.getElementById('top-title');
+
+        function changeSong(songName, imageSrc, audioSrc) {
+            // Hiển thị khung phát nhạc lên
+            playerBox.style.display = "block";
+            currentTitle.innerText = "Đang phát: " + songName;
+            topTitle.innerText = "ĐANG PHÁT: " + songName;
+            bigDisc.src = imageSrc;
+            
+            // Cập nhật đường dẫn file nhạc
+            audioControl.src = audioSrc;
+            audioControl.load(); 
+            
+            // Xử lý kích hoạt phát tự động (Autoplay)
+            var playPromise = audioControl.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    bigDisc.classList.add('playing');
+                }).catch(error => {
+                    bigDisc.classList.remove('playing');
+                    console.log("Trình duyệt chặn autoplay. Hãy bấm nút Play để nghe.");
+                });
+            }
+        }
+
+        // Lắng nghe sự kiện của thẻ audio để đồng bộ hóa đĩa xoay
+        audioControl.onplay = function() {
+            bigDisc.classList.add('playing'); // Khi nhạc chạy -> đĩa xoay
+        };
+
+        audioControl.onpause = function() {
+            bigDisc.classList.remove('playing'); // Khi bấm dừng -> đĩa đứng im
+        };
+    </script>
+
+</body>
+</html>
