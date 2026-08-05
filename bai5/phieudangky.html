@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phiếu Đăng Ký</title>
+    <link rel="stylesheet" href="style_form.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <header class="form-header">
+  <div class="header-left">
+  <img src="Images/lachong.gif" width="162" height="80"></div>
+  <div class="header-right"></div>
+  <div class="header-right">
+    <img src="Images/Flash.gif" alt="Adobe Logos" class="logo-right-img">
+    <img src="Images/dreamweaver.gif" alt="Adobe Logos" class="logo-right-img"><img src="Images/adobe.gif" alt="Adobe Logos" class="logo-right-img"></div>
+<div class="header-right"></div>
+<div class="header-right"></div>
+</header>
+        
+        <hr class="red-line">
+
+        <h2>PHIẾU ĐĂNG KÝ</h2>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+            <table class="form-table">
+                <tr>
+                    <td class="label-column">Họ và tên:</td>
+                    <td>
+                        <input type="text" name="txtHoTen" class="input-text-long">
+                        <span class="required">(*)</span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label-column">Địa chỉ :</td>
+                    <td>
+                        <input type="text" name="txtDiaChi" class="input-text-full">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label-column">Email :</td>
+                    <td>
+                        <input type="text" name="txtEmail" class="input-text-long">
+                        <span class="required">(*)</span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label-column">Giới tính :</td>
+                    <td>
+                        <label><input type="radio" name="radGioiTinh" value="Nam"> Nam</label>
+                        <label class="margin-left-10"><input type="radio" name="radGioiTinh" value="Nữ"> Nữ</label>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label-column">Tuổi :</td>
+                    <td>
+                        <input type="text" name="txtTuoi" class="input-text-short">
+                        <span class="required">(*)</span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label-column valign-top">Sở thích :</td>
+                    <td>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="chkSoThich" value="TheThao"> Thể thao</label>
+                            <label><input type="checkbox" name="chkSoThich" value="VanHoc"> Văn học</label>
+                            <label><input type="checkbox" name="chkSoThich" value="CNTT"> Công nghệ thông tin</label>
+                            <label><input type="checkbox" name="chkSoThich" value="LichSu"> Lịch sử</label>
+                            <label><input type="checkbox" name="chkSoThich" value="Game"> Game</label>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label-column">Chuyên ngành:</td>
+                    <td>
+                        <select name="selChuyenNganh" class="input-select">
+                            <option value="web">Công nghệ Web</option>
+                            <option value="cntt">Tin học ứng dụng</option>
+                            <option value="network">Mạng máy tính</option>
+                        </select>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label-column">Gửi hình:</td>
+                    <td>
+                        <input type="file" name="fileHinh" class="input-file">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label-column valign-top">Yêu cầu:</td>
+                    <td>
+                        <textarea name="txtYeuCau" rows="5" class="input-textarea"></textarea>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td class="button-row">
+                        <input type="submit" value="Gửi thông tin" class="btn">
+                        <input type="reset" value="Nhập lại" class="btn">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>
