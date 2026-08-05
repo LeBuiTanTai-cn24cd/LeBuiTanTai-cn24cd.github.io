@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Bạ Website</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* Thay đổi đường dẫn tính từ gốc thư mục web để sửa lỗi hình nền */
+            background-image: url('/Images/hoa_gio_hoa.jpg');
+            background-size: cover;
+            background-attachment: fixed; 
+            margin: 0;
+            padding: 40px 15px;
+            line-height: 1.6;
+        }
+
+        /* Khung hộp trắng mờ bọc nội dung */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.92); /* Độ mờ trắng 92% */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Tiêu đề chính màu xanh lam, căn giữa, viết hoa */
+        h2 {
+            color: blue;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Tiêu đề các mục con */
+        h3 {
+            color: #333333;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        /* Định dạng danh sách bullet hình vuông */
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: square; 
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Định dạng các liên kết văn bản */
+        a {
+            color: #0066cc;
+            text-decoration: none; 
+        }
+
+        a:hover {
+            text-decoration: underline; 
+            color: #ff0000;
+        }
+
+        /* Khu vực hiển thị liên kết ảnh quảng cáo nằm ngang */
+        .ads-section {
+            margin-top: 25px;
+            text-align: center; 
+        }
+
+        /* Sử dụng đường dẫn tính từ gốc thư mục chính */
+        .ads-section img {
+            width: 150px;       
+            height: auto;
+            border: 1px solid #cccccc; 
+            margin: 5px;        
+            transition: transform 0.2s;
+        }
+
+        .ads-section img:hover {
+            transform: scale(1.05); 
+            border-color: #ff0000;
+        }
+
+        /* Khu vực chân trang chứa email ban quản trị */
+        .footer-email {
+            margin-top: 35px;
+            border-top: 1px dashed #bbbbbb; 
+            padding-top: 15px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    
+        <h2>DANH BẠ WEBSITE</h2>
+        
+        <h3>Tin Tức</h3>
+        <ul>
+            <li><a href="https://vnexpress.net" target="_blank">Tin tức Việt Nam (VnExpress)</a></li>
+            <li><a href="https://tuoitre.vn" target="_blank">Báo Tuổi Trẻ</a></li>
+        </ul>
+        
+        <h3>Giải trí</h3>
+        <ul>
+            <li><a href="https://nhacso.net" target="_blank">Nhạc số Online</a></li>
+            <li><a href="https://ngoisao.vn" target="_blank">Giới thiệu ngôi sao</a></li>
+        </ul>
+        
+        <h3>Liên kết quảng cáo</h3>
+        <div class="ads-section"><img src="images (1).jfif" width="399" height="501" alt=""/><img src="images.jfif" width="166" height="164" alt=""/>
+        </div>
+        
+        <div class="footer-email">
+          <p>Mọi ý kiến đóng góp xin liên hệ: <a href="mailto:hpt7777@gmail.com">Gửi Mail về ban quản trị</a></p>
+        </div>
+        
+    </div>
+
+</body>
+</html>
