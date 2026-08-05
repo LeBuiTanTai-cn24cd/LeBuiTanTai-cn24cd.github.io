@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sản Phẩm Học Tập - Thiết Kế Web</title>
+<style>
+    /* Reset cấu hình mặc định của trình duyệt */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0f0208; /* Màu nền tối toàn trang */
+        color: #ffffff;
+    }
+
+    /* 1. KHU VỰC CONTAINER CHÍNH BỌC TOÀN TRANG */
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        max-width: 1400px;
+        margin: 0 auto;
+        border-left: 2px solid #cc0000;
+        border-right: 2px solid #cc0000;
+    }
+
+    /* 2. KHU VỰC HEADER (BANNER) CHỨA CHỮ CHẠY NGANG */
+    header {
+        /* Đã cập nhật: Sử dụng ảnh GIF làm hình nền động cho Header */
+        background-size: cover;       /* Giúp ảnh GIF phủ kín toàn bộ banner */
+        background-position: center;  /* Căn giữa ảnh động */
+        background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+        padding: 20px 0;
+        text-align: center;
+        border-bottom: 3px solid #000;
+        overflow: hidden; /* Giữ chữ không bị tràn ra ngoài lề đỏ khi chạy */
+        position: relative;
+    }
+    
+    /* Vùng chứa dòng chữ để thiết lập chuyển động */
+    .marquee-box {
+        display: inline-block;
+        white-space: nowrap; /* Ép dòng chữ luôn nằm trên một hàng */
+        animation: marqueeRun 15s linear infinite; /* 15s là tốc độ chạy */
+    }
+    
+    header h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #fff; /* Hiệu ứng lấp lánh cho tên */
+    }
+    
+    header p {
+        font-size: 14px;
+        margin-top: 5px;
+        color: #ffb3b3;
+    }
+
+    /* Định nghĩa hiệu ứng chạy từ phải màn hình sang trái màn hình */
+    @keyframes marqueeRun {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    /* 3. THÂN TRANG (CHỨA MENU VÀ NỘI DUNG HIỂN THỊ) */
+    .container {
+        display: flex;
+        flex: 1; /* Kéo giãn thân trang xuống sát chân trang */
+    }
+
+    /* 4. THANH MENU BÊN TRÁI (SIDEBAR) - CÓ THANH CUỘN KHI QUÁ DÀI */
+    aside {
+        width: 290px;
+        background-color: #260008;
+        padding: 20px 15px;
+        border-right: 2px solid #3d000d;
+        max-height: calc(100vh - 130px); /* Giới hạn chiều cao dựa trên màn hình */
+        overflow-y: auto; /* Tự động hiện thanh cuộn dọc khi có nhiều bài tập */
+    }
+    
+    /* Tùy chỉnh thanh cuộn menu cho đẹp mắt */
+    aside::-webkit-scrollbar {
+        width: 6px;
+    }
+    aside::-webkit-scrollbar-track {
+        background: #1a0005;
+    }
+    aside::-webkit-scrollbar-thumb {
+        background-color: #cc0000;
+        border-radius: 3px;
+    }
+
+    /* CSS mới: Định dạng cho hình ảnh nằm ở góc trên menu */
+    .menu-avatar {
+        width: 100%;                  /* Tự co giãn theo chiều rộng của menu */
+        height: auto;                 /* Giữ nguyên tỉ lệ ảnh, không bị méo */
+        display: block;               /* Xóa bỏ khoảng trống dư thừa phía dưới ảnh */
+        border-radius: 6px;           /* Bo góc nhẹ cho hài hòa */
+        margin-bottom: 15px;          /* Tạo khoảng cách với nút Bài Tập 1 ở dưới */
+        border: 2px solid #cc0000;     /* Tạo viền đỏ nổi bật đồng bộ với website */
+    }
+
+    /* Cấu trúc bọc ngoài khối chi tiết (details) */
+    .menu-group {
+        margin-bottom: 15px;
+    }
+
+    /* Tiêu đề mục Bài Tập (summary) - Đóng vai trò là nút bấm */
+    .menu-title {
+        background: linear-gradient(to right, #cc0000, #800000);
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 15px;
+        letter-spacing: 1px;
+        list-style: none; /* Ẩn dấu mũi tên mặc định của Firefox/chuẩn CSS */
+        user-select: none; /* Tránh bôi đen chữ khi bấm nhanh nhiều lần */
+    }
+    
+    /* Ẩn dấu mũi tên tam giác mặc định trên Chrome, Safari và Edge */
+    .menu-title::-webkit-details-marker {
+        display: none;
+    }
+
+    /* Danh sách các bài tập bên trong */
+    .menu-list {
+        list-style: none;
+        padding-left: 10px;
+        margin-top: 5px; /* Tạo khoảng cách nhẹ so với nút tiêu đề khi mở ra */
+    }
+    
+    .menu-list li {
+        margin: 8px 0;
+    }
+    
+    .menu-list li a {
+        color: #ff9999;
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+        padding: 6px;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    
+    .menu-list li a:hover {
+        background-color: #cc0000;
+        color: #fff;
+        padding-left: 12px; /* Tạo hiệu ứng thụt lề nhẹ khi rê chuột vào */
+    }
+
+    /* 5. NỘI DUNG HIỂN THỊ BÀI LÀM BÊN PHẢI (MAIN CONTENT) */
+    main {
+        flex: 1;
+        background-color: #ffffff; /* Nền trắng bao quanh nội dung hiển thị */
+        color: #333333;
+        padding: 0; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 6. KHU VỰC FOOTER DƯỚI CÙNG */
+    footer {
+        background: linear-gradient(90deg, #800000, #cc0000, #800000);
+        text-align: center;
+        padding: 12px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        border-top: 3px solid #000;
+        color: #ffffff;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <header>
+        <div class="marquee-box">
+            <h1>LÊ BÙI TẤN TÀI</h1>
+            <p>CN24CD - Thiết Kế Web</p>
+        </div>
+    </header>
+
+    <div class="container">
+    
+        <aside>
+            <!-- Thẻ chèn bức ảnh gif.gif của bạn vào góc menu -->
+<img src="gif.gif" alt="Decade" class="menu-avatar">
+
+            <!-- Khối Bài Tập 1 -->
+            <details class="menu-group">
+                <summary class="menu-title">📄 Bài Tập 1 ▼</summary>
+                <ul class="menu-list">
+                    <li><a href="bai1/index.html" target="content-frame">Bài 1</a></li>
+                    <li><a href="bai2/index.html" target="content-frame">Bài 2</a></li>
+                    <li><a href="bai3/index.html" target="content-frame">Bài 3</a></li>
+                    <li><a href="bai4/index.html" target="content-frame">Bài 4</a></li>
+                    <li><a href="bai5/phieudangky.html" target="content-frame">Bài 5 phiếu đăng ký</a></li>
+                </ul>
+            </details>
+            
+            <!-- Khối Bài Tập 2 -->
+            <details class="menu-group">
+                <summary class="menu-title">📄 Bài Tập 2 ▼</summary>
+                <ul class="menu-list">
+                    <li><a href="Bai2_1_online/online.html" target="content-frame">Bài 2.1 Trực tuyến</a></li>
+                    <li><a href="Bai2_2_Hoacanh/hoacanh.html" target="content-frame">Bài 2.2 Hoa cảnh</a></li>
+                    <li><a href="Bai2_3_CLB_My_Thuat/gioithieu.html" target="content-frame">Bài 2.3 CLB Mỹ thuật</a></li>
+                    <li><a href="Bai2_4_Mypham/index.html" target="content-frame">Bài 2.4 Mỹ phẩm</a></li>
+                    <li><a href="Bai2_5_Sound_Shopper/index.html" target="content-frame">Bài 2.5 Sound Shopper</a></li>
+                    <li><a href="Bai2_6_lenam/index.html" target="content-frame">Bài 2.6 Lê Nam</a></li>
+                </ul>
+            </details>
+
+            <!-- Khối Danh Sách Bài Tập Mới -->
+            <details class="menu-group">
+                <summary class="menu-title">📂 Danh Sách Bài Tập Mới ▼</summary>
+                <ul class="menu-list">
+                    <li><a href="Bài1Wellcome/Wellcome.html" target="content-frame">Bài Mới 1: Welcome</a></li>
+                    <li><a href="Bài2Cohaimo/Cohaimo.html" target="content-frame">Bài Mới 2: Có hai mợ</a></li>
+                    <li><a href="Bài3Chiso Trenduoi/ChisoTrenduoi.html" target="content-frame">Bài Mới 3: Chỉ số trên dưới</a></li>
+                    <li><a href="Bài4Kyhieudacbiet/Kyhieudacbiet.html" target="content-frame">Bài Mới 4: Ký hiệu đặc biệt</a></li>
+                    <li><a href="Bài5Hieuungvb/Hieuungvb.html" target="content-frame">Bài Mới 5: Hiệu ứng văn bản</a></li>
+                    <li><a href="Bài6ChuongTrinhDTWeb1/ChuongTrinhDTWeb1.html" target="content-frame">Bài Mới 6: Chương trình ĐT Web 1</a></li>
+                    <li><a href="Bài7ChuongTrinhDTWeb2/ChuongTrinhDTWed2.html" target="content-frame">Bài Mới 7: Chương trình ĐT Web 2</a></li>
+                    <li><a href="Bài8ChuongTrinhDTWeb/ChuongTrinhDTWed.html" target="content-frame">Bài Mới 8: Chương trình ĐT Web</a></li>
+                    <li><a href="Bài9ChuongTrinhDTTHVP/ChuongTrinhDTTHVP.html" target="content-frame">Bài Mới 9: Chương trình ĐT THVP</a></li>
+                    <li><a href="Bài10TaisanBill/TaisanBill.html" target="content-frame">Bài Mới 10: Tài sản Bill</a></li>
+                    <li><a href="Bài11Nhacnen/Nhacnen.html" target="content-frame">Bài Mới 11: Nhạc nền</a></li>
+                    <li><a href="Bài12ChuongTrinhDaoTao/ChuongTinhDaoTao.html" target="content-frame">Bài Mới 12: Chương trình đào tạo</a></li>
+                    <li><a href="Bài13DanhBaWeb/DanhBaWeb.html" target="content-frame">Bài Mới 13: Danh bạ Web</a></li>
+                    <li><a href="Bài14Albumnhac/Albumnhac.html" target="content-frame">Bài Mới 14: Album nhạc</a></li>
+                    <li><a href="Bài15KetQuaHocTap/KetQuaHocTap.html" target="content-frame">Bài Mới 15: Kết quả học tập</a></li>
+                </ul>
+            </details>
+        </aside>
+
+        <main>
+            <iframe name="content-frame" style="width: 100%; flex: 1; border: none; min-height: 550px;" srcdoc="
+                <!doctype html>
+                <html>
+                <head>
+                <style>
+                    body { font-family: Arial, sans-serif; padding: 30px; color: #333; background-color: #fff; }
+                    h2 { color: #800000; margin-bottom: 10px; }
+                    p { color: #666; font-style: italic; }
+                </style>
+                </head>
+                <body>
+                    <h2>Chào mừng các Kamen Rider đến với trang tổng hợp bài tập thiết kế web.</h2>
+                    <p>(Hãy click vào các bài tập ở menu bên trái để mở nội dung hiển thị tại đây nhé!)</p>
+                </body>
+                </html>
+            "></iframe>
+        </main>
+        
+    </div>
+
+    <footer>
+      <p>KAMEN RIDER</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
