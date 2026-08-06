@@ -30,7 +30,6 @@
 
     /* 2. KHU VỰC HEADER (BANNER) CHỨA CHỮ CHẠY NGANG */
     header {
-        /* Đã cập nhật: Sử dụng ảnh GIF làm hình nền động cho Header */
         background-size: cover;       /* Giúp ảnh GIF phủ kín toàn bộ banner */
         background-position: center;  /* Căn giữa ảnh động */
         background-repeat: no-repeat; /* Không lặp lại hình ảnh */
@@ -95,13 +94,16 @@
         border-radius: 3px;
     }
 
-    /* CSS mới: Định dạng cho hình ảnh nằm ở góc trên menu */
+    /* Định dạng cho hình ảnh GIF ở góc menu */
     .menu-avatar {
         width: 100%;                  /* Tự co giãn theo chiều rộng của menu */
-        height: auto;                 /* Giữ nguyên tỉ lệ ảnh, không bị méo */
+        height: auto;                 /* Giữ nguyên tỉ lệ ảnh */
+        min-height: 120px;            /* Giữ khung cố định tránh bị co giật khi chưa tải xong ảnh */
+        object-fit: cover;
+        background-color: #1a0005;    /* Nền tối dự phòng */
         display: block;               /* Xóa bỏ khoảng trống dư thừa phía dưới ảnh */
         border-radius: 6px;           /* Bo góc nhẹ cho hài hòa */
-        margin-bottom: 15px;          /* Tạo khoảng cách với nút Bài Tập 1 ở dưới */
+        margin-bottom: 15px;          /* Tạo khoảng cách với nút Bài Tập ở dưới */
         border: 2px solid #cc0000;     /* Tạo viền đỏ nổi bật đồng bộ với website */
     }
 
@@ -119,7 +121,7 @@
         cursor: pointer;
         font-size: 15px;
         letter-spacing: 1px;
-        list-style: none; /* Ẩn dấu mũi tên mặc định của Firefox/chuẩn CSS */
+        list-style: none; /* Ẩn dấu mũi tên mặc định */
         user-select: none; /* Tránh bôi đen chữ khi bấm nhanh nhiều lần */
     }
     
@@ -192,8 +194,8 @@
     <div class="container">
     
         <aside>
-            <!-- Thẻ chèn bức ảnh gif.gif của bạn vào góc menu -->
-<img src="gif.gif" alt="Decade" class="menu-avatar">
+            <!-- Thẻ chèn bức ảnh GIF Kamen Rider Decade -->
+            <img src="gif.gif" alt="Decade" class="menu-avatar">
 
             <!-- Khối Bài Tập 1 -->
             <details class="menu-group">
@@ -208,7 +210,7 @@
             </details>
             
             <!-- Khối Bài Tập 2 -->
-            <details class="menu-group">
+            <details class="menu-group" open>
                 <summary class="menu-title">📄 Bài Tập 2 ▼</summary>
                 <ul class="menu-list">
                     <li><a href="Bai2_1_online/online.html" target="content-frame">Bài 2.1 Trực tuyến</a></li>
@@ -217,6 +219,7 @@
                     <li><a href="Bai2_4_Mypham/index.html" target="content-frame">Bài 2.4 Mỹ phẩm</a></li>
                     <li><a href="Bai2_5_Sound_Shopper/index.html" target="content-frame">Bài 2.5 Sound Shopper</a></li>
                     <li><a href="Bai2_6_lenam/index.html" target="content-frame">Bài 2.6 Lê Nam</a></li>
+                    <li><a href="Bai2_7_Homebanks/index.html" target="content-frame">Bài 2.7 Homebank</a></li>
                 </ul>
             </details>
 
