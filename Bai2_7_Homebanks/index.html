@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Homebank.com</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3b6b9a;
+            font-size: 13px;
+        }
+
+        /* Khung tổng thể 1000px đặt ở giữa */
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* 1. BANNER CHÍNH TOP */
+        .header-banner {
+            display: flex;
+            width: 100%;
+            height: 120px;
+            background-color: #316293;
+        }
+
+        .header-banner img {
+            height: 100%;
+            display: block;
+        }
+
+        /* 2. THANH MENU CHÍNH */
+        .nav-menu {
+            background-color: #2b5885;
+            padding: 6px 15px;
+            border-top: 1px solid #5784b1;
+            border-bottom: 1px solid #5784b1;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 0 12px;
+            border-right: 1px solid #7ea3c8;
+        }
+
+        .nav-menu a:first-child {
+            padding-left: 0;
+        }
+
+        .nav-menu a:last-child {
+            border-right: none;
+        }
+
+        /* 3. THÂN TRANG (3 CỘT) */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* CỘT TRÁI (LEFT SIDEBAR) */
+        .sidebar-left {
+            width: 180px;
+            background: url('images/nen_trai.gif') repeat-y #3f709f;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .sidebar-left a.btn-menu {
+            display: block;
+        }
+
+        .sidebar-left a.btn-menu img {
+            width: 100%;
+            display: block;
+            border: none;
+        }
+
+        .left-ads {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .left-ads img {
+            width: 100%;
+            display: block;
+            border: 1px solid #ffffff;
+        }
+
+        /* CỘT GIỮA (MAIN CONTENT) */
+        .main-content {
+            flex: 1;
+            padding: 8px 12px;
+            background-color: #ffffff;
+        }
+
+        /* Khối banner chữ chạy phía trên bài viết */
+        .top-marquee-container {
+            border: 1px solid #a3c1da;
+            margin-bottom: 15px;
+            background-color: #f2f7fb;
+        }
+
+        .marquee-text {
+            background-color: #e6f0f8;
+            padding: 4px 8px;
+            font-weight: bold;
+            color: #000;
+            font-size: 13px;
+            border-bottom: 1px solid #a3c1da;
+        }
+
+        .banner-tichluy {
+            display: flex;
+            width: 100%;
+            height: 110px;
+        }
+
+        .banner-tichluy img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Tiêu đề BẢNG TIN TRONG NGÀY */
+        .section-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Danh sách bài tin */
+        .news-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .news-img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+
+        .news-info {
+            flex: 1;
+        }
+
+        .news-title {
+            font-weight: bold;
+            color: #000000;
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.4;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .news-desc {
+            color: #333333;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            font-size: 12.5px;
+        }
+
+        .news-date {
+            color: #444444;
+            font-size: 12px;
+        }
+
+        /* CỘT PHẢI (RIGHT SIDEBAR) */
+        .sidebar-right {
+            width: 180px;
+            background: url('images/nen_phai.gif') repeat-y #3f709f;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar-right img {
+            width: 100%;
+            display: block;
+            border: 1px solid #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- 1. HEADER BANNER -->
+    <header class="header-banner">
+        <img src="images/banner_01.jpg" alt="Banner 1">
+        <img src="images/banner_02.jpg" alt="Banner 2">
+        <img src="images/banner_03.jpg" alt="Banner 3">
+        <img src="images/banner_04.jpg" alt="Banner 4">
+        <img src="images/banner_05.jpg" alt="Banner 5">
+    </header>
+
+    <!-- 2. THANH MENU CHÍNH -->
+    <nav class="nav-menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Tin tức</a>
+        <a href="#">Dịch vụ</a>
+        <a href="#">Khách hàng</a>
+        <a href="#">Liên hệ</a>
+    </nav>
+
+    <!-- 3. KHU VỰC NỘI DUNG CHÍNH (3 CỘT) -->
+    <div class="container">
+
+        <!-- CỘT TRÁI -->
+        <aside class="sidebar-left">
+            <a href="#" class="btn-menu"><img src="images/tygia.gif" alt="Tỷ giá ngoại tệ"></a>
+            <a href="#" class="btn-menu"><img src="images/ngan_hang_lienket.gif" alt="Ngân hàng Liên kết"></a>
+            <a href="#" class="btn-menu"><img src="images/ngan_hang_dien_tu.gif" alt="Ngân hàng điện tử"></a>
+            <a href="#" class="btn-menu"><img src="images/lai_xuat.gif" alt="Lãi suất"></a>
+            <a href="#" class="btn-menu"><img src="images/Mang_luoi.gif" alt="Mạng lưới hoạt động"></a>
+            <a href="#" class="btn-menu"><img src="images/Dich_vu.gif" alt="Dịch vụ Ngân hàng"></a>
+            <a href="#" class="btn-menu"><img src="images/gop_y.gif" alt="Góp ý khách hàng"></a>
+
+            <!-- Quảng cáo cột trái -->
+            <div class="left-ads">
+                <img src="images/Dong_a.jpg" alt="Thẻ Đông Á">
+                <img src="images/cam_on.jpg" alt="Cảm ơn đâu chỉ dùng lời">
+            </div>
+        </aside>
+
+        <!-- CỘT GIỮA -->
+        <main class="main-content">
+
+            <!-- Chữ chạy + Khối banner Tích luỹ Niềm tin -->
+            <div class="top-marquee-container">
+                <div class="marquee-text">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">
+                        Ngân hàng Thương mại cổ phần thương tín (STB) vừa chính thức công bố kết quả kinh doanh 7 tháng đầu năm 2007...
+                    </marquee>
+                </div>
+                <div class="banner-tichluy">
+                    <img src="images/tich_luy_01.jpg" style="width: 35%;" alt="Tích lũy 1">
+                    <img src="images/tich_luy_02.jpg" style="width: 35%;" alt="Tích lũy 2">
+                    <img src="images/tich_luy_03.jpg" style="width: 30%;" alt="Tích lũy 3">
+                </div>
+            </div>
+
+            <h2 class="section-title">BẢNG TIN TRONG NGÀY</h2>
+
+            <!-- Bài tin 1 -->
+            <article class="news-item">
+                <img src="images/giao_dich.gif" alt="Giao dịch" class="news-img">
+                <div class="news-info">
+                    <p class="news-desc">
+                        Ngày 27/8/2007, Công ty Chứng khoán Sài Gòn Thương Tín (Sacombank Securities- SBS) chính thức “trình làng” cổng giao dịch trực tiếp, đây cũng chính là website mới của SBS...
+                    </p>
+                    <span class="news-date">Homebank cập nhật: 27-08-2007</span>
+                </div>
+            </article>
+
+            <!-- Bài tin 2 -->
+            <article class="news-item">
+                <img src="images/nhan_vien.gif" alt="Nhân viên" class="news-img">
+                <div class="news-info">
+                    <a href="#" class="news-title">CHỨNG KHOÁN NGÀY 24/8: LẠI VƯỢT 900 ĐIỂM</a>
+                    <p class="news-desc">
+                        Cổ phiếu đồng loạt tăng giá, đưa VN-Index có một phiên đảo chiều mạnh mẽ, vượt mốc 900 điểm...
+                    </p>
+                    <span class="news-date">Homebank cập nhật: 24-08-2007</span>
+                </div>
+            </article>
+
+            <!-- Bài tin 3 -->
+            <article class="news-item">
+                <img src="images/peace.JPG" alt="Hợp tác" class="news-img">
+                <div class="news-info">
+                    <a href="#" class="news-title">CHỨNG KHOÁN NGÀY 21/8: TĂNG ĐỂ THĂM DÒ</a>
+                    <p class="news-desc">
+                        Thị trường có phiên thứ hai liên tiếp tăng điểm, nhưng ở mức nhẹ, thăm dò khả năng tái lập mốc 900 điểm...
+                    </p>
+                    <span class="news-date">Homebank cập nhật: 22-08-2007</span>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- CỘT PHẢI -->
+        <aside class="sidebar-right">
+            <img src="images/phat_hanh_ATM.jpg" alt="Đăng ký phát hành thẻ ATM">
+            <img src="images/ATM.jpg" alt="Các điểm ATM">
+            <img src="images/cophieu.jpg" alt="Cổ phiếu Ngân hàng Nông thôn">
+            <img src="images/dola.jpg" alt="Đô la">
+        </aside>
+
+    </div>
+
+</div>
+
+</body>
+</html>
